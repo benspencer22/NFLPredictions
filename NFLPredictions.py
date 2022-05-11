@@ -3,11 +3,11 @@
 
 TEAMS = ['Cowboys', 'Buccaneers', 'Eagles', 'Falcons', 'Steelers',
  'Bills', 'Jets', 'Panthers', 'Vikings',
-  'Bengals', '49ers', 'Lions', 'Jaguars',
+  'Bengals', '49ers', 'Lions', 'Jaguars', 'Texans',
    'Seahawks', 'Colts', 'Cardinals', 'Titans',
     'Chargers', 'Commanders', 'Browns', 'Chiefs',
      'Dolphins', 'Patriots', 'Packers', 'Saints',
-      'Broncos', 'Bears', 'Rams', 'Raiders', 'Ravens']
+      'Broncos', 'Giants', 'Bears', 'Rams', 'Raiders', 'Ravens']
 
 
 def checkTeam(team):
