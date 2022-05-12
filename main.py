@@ -45,14 +45,26 @@ n_away_data = away_features.drop(['Outcome'], axis=1)
 home_avg = n_home_data.mean()
 away_avg = n_away_data.mean()
 
+# assign X and y
+X_home = home_avg
+y = home_features['Outcome']
+
+# reshape the data
+X_home = X_home.values.reshape(-1, 1)
+y = y.values.reshape(-1, 1)
+
+print(X_home.shape)
+print(y.shape)
+
 # split the data into training and testing
-home_train, home_test = train_test_split(n_home_data, test_size=0.2)
-away_train, away_test = train_test_split(n_away_data, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(X_home, y, test_size=0.2, random_state=42)
 
 # create the model
-
+model = LinearRegression()
 
 # fit the model
-
+model.fit(X_train, y_train)
 
 # predict the scores
+predicted_home = model.predict(X_test)
+
