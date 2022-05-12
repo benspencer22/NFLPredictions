@@ -39,6 +39,7 @@ sc = StandardScaler()
 sc.fit(X_train)
 X_train_std = sc.transform(X_train)
 X_test_std = sc.transform(X_test)
+X_test_std = X_test_std.astype(np.bool)
 
 # build the model
 model = SVC(kernel='rbf', C=1)
@@ -49,9 +50,9 @@ home_team = input('Enter the home team: ')
 
 # get data for the home team
 home_data = nfl[nfl['Team'] == home_team]
-
+n_home_data = home_data.drop(['Team', 'Outcome'], axis=1)
 # predict the outcome
-X_new = home_data.drop(['Outcome'], axis=1)
+X_new = home_data
 X_new = X_new.astype(np.bool)
 X_new_std = sc.transform(X_new)
 y_hat = model.predict(X_new)
